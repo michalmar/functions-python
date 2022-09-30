@@ -17,6 +17,7 @@ def main(req: func.HttpRequest, customerItem: func.DocumentList) -> str:
                     "feat0": customerItem[0]['feat0'],
                     "feat1": customerItem[0]['feat1'],
                     "feat2": customerItem[0]['feat2'],
+                    "feat3": customerItem[0]['feat3'],
                }
         return func.HttpResponse(
             json.dumps(ret),
