@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "customerItem",
+      "databaseName": "test-prov",
+      "collectionName": "customers",
+      "connectionStringSetting": "CosmosDbConnectionString",
+      "direction": "in",
+      "Id": "{Query.id}",
+      "PartitionKey": "{Query.id}"
+    }
+  ],
+  "scriptFile": "__init__.py"
+}
